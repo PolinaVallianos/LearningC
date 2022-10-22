@@ -27,3 +27,5 @@ Console.WriteLine(byteNumber+2 >= shortNumber);
 Console.WriteLine(byteNumber <= shortNumber);
 Console.WriteLine(byteNumber == shortNumber);
 Console.WriteLine(byteNumber != shortNumber);
+
+Console.ReadLine();
