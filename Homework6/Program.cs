@@ -1,37 +1,43 @@
-﻿Console.WriteLine("Enter program numbre: ");
-var n1 = Console.ReadLine();
-
-
-switch (n1)
+﻿while (true)
 {
-    case "1":
-        Console.WriteLine($"Task {n1}");
-        int start = GetIntNumber();
-        int numberTask1 = GetIntNumber();
-        Console.WriteLine(Task1(start, numberTask1));
-        break;
-    case "2":
-        Console.WriteLine($"Task {n1}");
-        int numberTask2 = GetIntNumber();
-        Task2(numberTask2);
-        break;
-    case "3":
-        Console.WriteLine($"Task {n1}");
-        int numberTask3 = GetIntNumber();
-        Task3(numberTask3);
-        break;
-    case "4":
-        Console.WriteLine($"Task {n1}");
-        int numberTask4 = GetIntNumber();
-        Task4(numberTask4);
-        break;
-    case "q" or "Q":
-        Console.WriteLine("Goodbye!");
-        break;
-    default:
-        Console.WriteLine($"Task {n1} doesn't exist");
-        break;
+    Console.WriteLine("Enter program numbre: ");
+    var n1 = Console.ReadLine();
+
+    switch (n1)
+    {
+        case "1":
+            Console.WriteLine($"Task {n1}");
+            int start = GetIntNumber();
+            int numberTask1 = GetIntNumber();
+            Console.WriteLine(Task1(start, numberTask1));
+            break;
+        case "2":
+            Console.WriteLine($"Task {n1}");
+            int numberTask2 = GetIntNumber();
+            Task2(numberTask2);
+            break;
+        case "3":
+            Console.WriteLine($"Task {n1}");
+            int numberTask3 = GetIntNumber();
+            Task3(numberTask3);
+            break;
+        case "4":
+            Console.WriteLine($"Task {n1}");
+            int numberTask4 = GetIntNumber();
+            Task4(numberTask4);
+            break;
+        case "q" or "Q":
+            Console.WriteLine($"Bye, bye!");
+            return;
+        default:
+            Console.WriteLine($"Task {n1} doesn't exist");
+            break;
+    }
 }
+
+
+
+
 
 
 int Task1(int start, int number)
