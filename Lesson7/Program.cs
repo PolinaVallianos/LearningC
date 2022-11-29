@@ -95,6 +95,12 @@ class Program
 
     //}
 
+    /// <summary>
+    /// Return an integer
+    /// </summary>
+    /// <param name="order">Order of an enumerated parameter</param>
+    /// <param name="name">Name of enumerated parameter</param>
+    /// <returns></returns>
     static int GetIntNumber(int order = 0, string name = "int number")
     {
         if (order > 0) Console.WriteLine($"Enter the {order}th {name}");
