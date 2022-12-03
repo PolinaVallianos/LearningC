@@ -7,7 +7,7 @@ class Program
     {
         Console.Write("Enter task number: ");
         var value = Console.ReadLine();
-        WhatType();
+        WhatType(value);
     }
 
     static string WhatType(int value)
