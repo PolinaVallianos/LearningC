@@ -10,14 +10,12 @@ class Program
         int[,] arr5 = new int[3, 2];
         int[][] arr6 = new int[3][] { arr1, arr2, arr3 };
 
-        //1
         Console.WriteLine("В обратном порядке:");
         PrintArray(Revers(arr1));
 
         Console.WriteLine();
         PrintArray(arr1);
 
-        //2
         Console.WriteLine("\nУдаление элемента 0:");
         PrintArray(Remove(arr1, 0));
         Console.WriteLine("\nУдаление элемента -1:");
@@ -25,13 +23,10 @@ class Program
         Console.WriteLine("\nУдаление элемента 5:");
         PrintArray(Remove(arr1, 5));
 
-        //3
         PrintArray2(Fill(arr4));
 
-        //4
         PrintArray2(SumOfMatrix(arr4, Fill(arr5)));
 
-        //5
         Console.WriteLine();
         PrintArray3(JaggedToMatrix(arr6));
     }
