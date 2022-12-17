@@ -140,21 +140,18 @@ class Program
         string[] splitStr1 = str4.Split();
         foreach (var item in splitStr1)
         {
+            //отсечение указанных символов
             Console.WriteLine(item.Trim(':', ',', '.'));
         }
         Console.WriteLine();
 
-
         string[] splitStr2 = str4.Split('.');
-
         foreach (var item in splitStr2)
         {
+            //отсечение пробелов
             Console.WriteLine(item.Trim());
         }
         Console.WriteLine();
-
-
-
     }
 }
 
