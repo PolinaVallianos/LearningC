@@ -16,68 +16,79 @@ class Program
 
     static void PrintTable(string str)
     {
-        string[] splitStr = str.Split('.');
+        string[] splitStr = str.Trim('.', ' ').Split('.');
+        Console.WriteLine(splitStr[0].ToUpper());
 
-        //заголовок
-        string Header = splitStr[0];
-        Console.WriteLine(Header.ToUpper());
-
-        //шапка таблицы
-        string[] TableHeader = splitStr[1].Split(',');
-
-        int number = 0;
-        for (int i = 0; i < TableHeader.Length; i++)
+        string[][] newString = new string[splitStr.Length - 1][];
+        for (int i = 0; i < splitStr.Length-1; i++)
         {
-            number += TableHeader[i].Length + 2;
+            string[] line = splitStr[i + 1].Trim('.', ' ').Split(',');
+            for (int j = 0; j < line.Length; j++)
+            {
+                newString[i] = line;
+            }
         }
 
-        //горизонтальная линия
-        for (int i = 0; i < number; i++)
-        {
-            Console.Write("-");
-        }
-        Console.Write("-\n");
+        PrintLine(newString);
 
-        //шапка таблицы
-        for (int i = 0; i < TableHeader.Length; i++)
+        for (int i = 0; i < newString.Length; i++)
         {
-            Console.Write("|" + TableHeader[i] + " ");
-            if (i == TableHeader.Length - 1)
+            int count = 0;
+            for (int j = 0; j < newString[i].Length; j++)
+            {
+                Console.WriteLine("| " + newString[i][j].Trim('.', ' ') + " ");
+                count = newString[i][j].Trim(' ').Length;
+
+                if (count < MaxLength(newString, j))
+                {
+                    while (count < MaxLength(newString, j))
+                    {
+                        Console.Write(" ");
+                        count++;
+                    }
+                }
+            }
+
+            if (i == 0)
+            {
+                Console.Write("|\n");
+                PrintLine(newString);
+            }
+            else
             {
                 Console.Write("|\n");
             }
         }
 
-        //горизонтальная линия
-        for (int i = 0; i < number; i++)
+        PrintLine(newString);
+        Console.WriteLine();
+    }
+
+    static void PrintLine(string[][] str)
+    {
+        int count = 0;
+        int length = 0;
+
+        for (int i = 0; i < str[0].Length; i++)
+        {
+            length += MaxLength(str, i) + 3;
+        }
+
+        while (count <= length)
         {
             Console.Write("-");
+            count++;
         }
-        Console.Write("-\n");
+        Console.Write("\n");
+    }
 
-        //таблица
-
-        for (int i = 2; i < splitStr.Length; i++)
+    static int MaxLength(string[][] str, int index)
+    {
+        int maxLength = 0;
+        for (int i = 0; i < str.Length; i++)
         {
-            string[] Table = splitStr[i].Split(',');
-
-            for (int j = 0; j < Table.Length; j++)
-            {
-                Console.Write("|" + Table[j]);
-
-                for (int k = 0; k < (TableHeader[j].Length + 2) - (Table[j].Length + 1); k++)
-                {
-                    Console.Write(" ");
-                }
-            }
-            Console.WriteLine("|");
+            maxLength = maxLength >= str[i][index].Trim().Length ? maxLength : str[i][index].Trim().Length;
         }
-
-        //горизонтальная линия
-        for (int i = 0; i < number; i++)
-        {
-            Console.Write("-");
-        }
-        Console.Write("-\n");
+        return maxLength;
     }
 }

@@ -36,7 +36,7 @@ class Program
         string str2 = "Cities of Montenegro: Podgorica, Bar, Cetine. Podgorica is thee capital. (podgorica)";
 
         //проверяет содержит ли строка символ или подствроку
-        Console.WriteLinee("\n--Contains");
+        Console.WriteLine("\n--Contains");
 
         bool ContainceA = Contains('A'); //True
         
@@ -45,7 +45,7 @@ class Program
             Console.WriteLine("Bar is in Montenegro");
         }
 
-        bool containceAnyText = str1.ToLowwer().Contain("any text");
+        bool containceAnyText = str1.ToLower().Contains("any text");
 
         //заменяет символ или подстроку на новые
         Console.WriteLine("\n-----Replace");
@@ -118,7 +118,6 @@ class Program
             return result;
         }
 
-
         //объединяет элементы последова ельности(массива) в строку
         Console.WriteLine("\n---Join");
 
@@ -140,8 +139,8 @@ class Program
         Console.WriteLine(str1.PadRight(5) + '|'));
 
         //то же самое с помощью форматирования
-        Console.WriteLine($"{str1,-10}|");
-        Console.WriteLine($"{str1,10}|");
+        Console.WriteLine($"{str1,-10}|");//пробелы справа
+        Console.WriteLine($"{str1,10}|");//пробелы слева
     }
 }
 
