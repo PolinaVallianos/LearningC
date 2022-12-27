@@ -45,7 +45,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson11", "Lesson11\Lesson
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework11", "Homework11\Homework11.csproj", "{8A2B6F1A-D4DB-4E2B-B0C3-BA2A9DC8BDE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework11.2", "Homework11.2\Homework11.2.csproj", "{A744E497-60EF-4DF7-A1AA-BF7E8C12AE98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson12", "Homework11.2\Lesson12.csproj", "{A744E497-60EF-4DF7-A1AA-BF7E8C12AE98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
