@@ -116,6 +116,9 @@ class Program
         Console.WriteLine("sb.Length = " + sb.Length);
         Console.WriteLine("sb.Capacity = " + sb.Capacity);
 
+
+        //sb.Insert();
+
         //чтение и запись файлов
         Console.WriteLine("\n---Class File: ");
 
