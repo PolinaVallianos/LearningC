@@ -79,13 +79,14 @@ class Program
                 }
             }
         }
+        File.WriteAllText(out1, out11.ToString());
+        File.WriteAllText(out2, out22.ToString());
+        File.WriteAllText(out3, out33.ToString());
 
         //string[] text1 = out11.ToString().Split('\n');
         //string[] text2 = out22.ToString().Split('\n');
         //string[] text3 = out33.ToString().Split('\n');
-        File.WriteAllText(out1, out11.ToString());
-        File.WriteAllText(out2, out22.ToString());
-        File.WriteAllText(out3, out33.ToString());
+
         //File.WriteAllLines(out1, text1);
         //File.WriteAllLines(out2, text2);
         //File.WriteAllLines(out3, text3);
