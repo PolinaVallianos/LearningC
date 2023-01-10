@@ -19,10 +19,10 @@ class Program
     static void CreateInput(string input)
     {
         string[] Array = new string[1000];
+        Random rand = new Random();
 
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < Array.Length; i++)
         {
-            Random rand = new Random();
             int x = rand.Next(100, 400);
             Array[i] = x.ToString();
         }
@@ -80,11 +80,14 @@ class Program
             }
         }
 
-        string[] text1 = out11.ToString().Split('\n');
-        string[] text2 = out22.ToString().Split('\n');
-        string[] text3 = out33.ToString().Split('\n');
-        File.WriteAllLines(out1, text1);
-        File.WriteAllLines(out2, text2);
-        File.WriteAllLines(out3, text3);
+        //string[] text1 = out11.ToString().Split('\n');
+        //string[] text2 = out22.ToString().Split('\n');
+        //string[] text3 = out33.ToString().Split('\n');
+        File.WriteAllText(out1, out11.ToString());
+        File.WriteAllText(out2, out22.ToString());
+        File.WriteAllText(out3, out33.ToString());
+        //File.WriteAllLines(out1, text1);
+        //File.WriteAllLines(out2, text2);
+        //File.WriteAllLines(out3, text3);
     }
 }
