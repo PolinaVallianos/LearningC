@@ -49,8 +49,8 @@ enum DaysOfWeek
     Sunday = 64,    //01000000
 
     //часто используемые значения можно объединить в дополнительные константы
-    WorkDays = Monday | Tuesday | Wednesday | Thursday | Friday,
-    Weekend = Saturday | Sunday
+    WorkDays = Monday | Tuesday | Wednesday | Thursday | Friday, //00011111
+    Weekend = Saturday | Sunday //01100000
 
 }
 
