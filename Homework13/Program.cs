@@ -1,13 +1,10 @@
 ﻿namespace Homework13;
 [Flags]
 enum Survey
-{ 
-    tasty = 2,
-    unpalatable = 4,
-    goodService = 8,
-    badService = 16,
-    inexpensively = 32,
-    expencive = 64
+{
+    Tasty = 1,
+    GoodService = 2,
+    Inexpensively = 4
 }
 
 enum Stars
@@ -37,19 +34,19 @@ class Program
                 case 0:
                     if (mark == "yes")
                     {
-                        survey = Survey.tasty;
+                        survey |= Survey.Tasty;
                     }
                     break;
                 case 1:
                     if (mark == "yes")
                     {
-                        survey |= Survey.goodService;
+                        survey |= Survey.GoodService;
                     }
                     break;
                 default:
                     if (mark == "yes")
                     {
-                        survey |= Survey.inexpensively;
+                        survey |= Survey.Inexpensively;
                     }
                     break;
             }
@@ -62,11 +59,11 @@ class Program
     static Stars SetStars(Survey survey)
     {
         int stars = 0;
-        Survey[] goodChoices = new Survey[] {Survey.tasty, Survey.goodService,Survey.inexpensively};
+        Survey[] goodChoices = new Survey[] {Survey.Tasty, Survey.GoodService,Survey.Inexpensively};
 
         foreach (var item in goodChoices)
         {
-            if (survey == (survey |= item))
+            if (survey.HasFlag(item))
             {
                 stars++;
             }
