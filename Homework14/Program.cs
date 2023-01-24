@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Homework14;
 class Program
@@ -17,35 +18,23 @@ class Program
         (minNumber, maxNumber) = GetMinMax(1, 3, 67, 2, 32);
         Console.WriteLine($"Min = {minNumber}, Max = {maxNumber}");
 
-        (result, characters) = Expand(test, length);
+        (result, characters) = Expand(ref test, length);
         Console.WriteLine($"\n{result}, Number of items added: {characters}");
 
         if (result == true)
         {
-            int[] newArray = new int[length];
-
-            for (int i = 0; i < test.Length; i++)
+            for (int i = 1, j = test.Length - characters; j < test.Length; i++, j++)
             {
-                newArray[i] = test[i];
+                test[j] = i;
             }
 
-            for (int j = 1, k = 0; k < characters; j++, k++)
-            {
-                newArray[test.Length + k ] = j;
-            }
-
-            for (int i = 0; i < newArray.Length-1; i++)
-            {
-                Console.Write(newArray[i] + ", ");
-            }
-            Console.Write(newArray[newArray.Length-1] + "\n");
+            Console.WriteLine(String.Join(", ", test));
         }
 
     }
 
     static (int, int) GetMinMax(params int[] numbers)
     {
-        int[] result = new int[2];
         int bigNumber = 0;
 
         foreach (var item in numbers)
@@ -68,15 +57,22 @@ class Program
         return (smallNumber, bigNumber);
     }
 
-    static (bool, int) Expand(int[] array, int length)
+    static (bool, int) Expand(ref int[] array, int length)
     {
         bool result = false;
         int characters = 0;
 
         if (length > array.Length)
         {
+            int[] newArray = new int[length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                newArray[i] = array[i];
+            }
+
             result = true;
             characters = length - array.Length;
+            array = newArray;
         }
         return (result, characters);
     }
